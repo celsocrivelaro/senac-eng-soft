@@ -1,88 +1,82 @@
-## Plataforma de Gerenciamento de Arquivos em Nuvem (CloudVault)
+## Plataforma de Gerenciamento de Arquivos na Nuvem (CloudVault)
 
 ### 1. Escopo e Objetivos
 
-A necessidade de armazenamento seguro e acessível de arquivos digitais cresce exponencialmente com a digitalização de processos pessoais e corporativos. Muitos usuários enfrentam dificuldades em manter seus documentos organizados, sincronizados entre dispositivos e protegidos contra perdas.
+Muitas pessoas e pequenas empresas têm dificuldade em manter seus arquivos organizados e acessíveis em diferentes dispositivos. A perda de documentos importantes por falha de equipamentos ou falta de backup é um problema comum.
 
-A plataforma **CloudVault** oferece uma solução robusta para armazenamento, organização e compartilhamento de arquivos digitais na nuvem. O objetivo principal é garantir que o usuário tenha acesso onipresente aos seus dados (desktop e mobile), mantendo integridade, confidencialidade e disponibilidade das informações.
+A plataforma **CloudVault** oferece uma solução simples para armazenar, organizar e compartilhar arquivos na nuvem. O objetivo principal é permitir que o usuário acesse seus documentos de qualquer lugar (computador ou celular), mantendo seus arquivos seguros e organizados.
 
 ### 2. Descrição do Sistema
 
-O sistema permite upload de diversos formatos de arquivos (documentos, imagens, vídeos) organizados em uma estrutura hierárquica de diretórios virtuais. Os usuários podem criar, renomear, mover e excluir pastas livremente.
+O sistema é organizado por **Organizações** (empresas, equipes ou grupos). Cada organização possui seus próprios usuários, arquivos e configurações. Um usuário pertence a uma organização e pode acessar os arquivos compartilhados dentro dela.
 
-O sistema conta com um motor de busca indexado para filtragem avançada por metadados: tipo de arquivo, tamanho, data de modificação e palavras-chave. A visualização nativa (preview) permite visualizar PDFs e imagens diretamente no navegador, sem necessidade de download.
+Os usuários podem fazer upload de arquivos (documentos, imagens, vídeos) e organizá-los em pastas. O usuário pode criar, renomear, mover e excluir pastas conforme sua necessidade.
 
-O versionamento de arquivos permite restaurar versões anteriores em caso de modificações indesejadas. A sincronização automática identifica alterações em arquivos locais e replica no servidor (e vice-versa).
+O sistema oferece uma busca simples por nome de arquivo e tipo. Também permite visualizar documentos PDF e imagens diretamente no navegador, sem precisar baixar o arquivo.
+
+O compartilhamento de arquivos pode ser feito dentro da organização (com outros membros) ou externamente através de links públicos.
 
 ### 3. Atores e Fluxos Principais
 
-#### Usuário Comum
-- Realizar upload e download de arquivos
-- Criar e organizar pastas/diretórios
-- Buscar arquivos por nome, tipo ou conteúdo
-- Compartilhar arquivos/pastas com outros usuários via link
-- Restaurar versões anteriores de arquivos modificados
+#### Administrador da Organização
+- Criar e gerenciar a organização
+- Convidar e remover membros da organização
+- Definir limite de armazenamento para cada membro
+- Visualizar estatísticas de uso da organização (espaço total utilizado, número de arquivos)
+- Gerenciar pastas compartilhadas da organização
 
-**Permissões:** Acesso limitado aos próprios arquivos e àqueles compartilhados com ele.
+**Permissões:** Gerencia os membros e configurações da organização. Pode acessar as pastas compartilhadas da organização, mas não os arquivos pessoais dos membros.
 
-#### Usuário Premium
-- Todas as ações do Usuário Comum
-- Acesso a maior capacidade de armazenamento
-- Configurar links de compartilhamento com senha e data de expiração
-- Ativar criptografia ponta-a-ponta para arquivos sensíveis
-- Acessar histórico estendido de versões (90 dias)
+#### Membro da Organização
+- Fazer upload e download de arquivos
+- Criar e organizar pastas pessoais
+- Buscar arquivos por nome ou tipo
+- Compartilhar arquivos com outros membros da organização
+- Compartilhar arquivos externamente via link
+- Acessar pastas compartilhadas da organização
 
-**Permissões:** Funcionalidades avançadas de segurança e armazenamento expandido.
+**Permissões:** Acesso aos seus próprios arquivos, aos arquivos compartilhados com ele e às pastas compartilhadas da organização.
 
-#### Administrador
-- Gerenciar contas de usuários (criar, suspender, excluir)
-- Monitorar uso de armazenamento e estatísticas do sistema
-- Configurar políticas de retenção e backup
-- Acessar logs de auditoria e atividades
-- Gerenciar planos e permissões de usuários
+#### Usuário Externo (Convidado)
+- Visualizar arquivos compartilhados via link
+- Fazer download de arquivos (se permitido pelo dono)
+- Editar arquivos (se permitido pelo dono)
 
-**Permissões:** Acesso total ao painel administrativo, sem acesso ao conteúdo dos arquivos dos usuários.
+**Permissões:** Acesso limitado apenas aos arquivos específicos compartilhados com ele. Não precisa ter conta no sistema.
 
 ### 4. Requisitos Funcionais
 
-- **RF01:** O sistema deve permitir upload de arquivos de até 2GB individualmente
-- **RF02:** O sistema deve organizar arquivos em estrutura hierárquica de pastas
-- **RF03:** O sistema deve sincronizar arquivos automaticamente entre dispositivos
-- **RF04:** O sistema deve gerar links de compartilhamento com permissões configuráveis (leitura, edição)
-- **RF05:** O sistema deve manter histórico de versões dos arquivos por 30 dias (padrão)
-- **RF06:** O sistema deve permitir busca por nome, tipo, data e conteúdo textual
-- **RF07:** O sistema deve exibir preview de PDFs, imagens e documentos de texto
-- **RF08:** O sistema deve notificar o usuário quando arquivos compartilhados forem modificados
+- **RF01:** O sistema deve permitir criar e gerenciar organizações
+- **RF02:** O sistema deve permitir convidar e remover membros de uma organização
+- **RF03:** O sistema deve permitir upload de arquivos de diversos formatos
+- **RF04:** O sistema deve permitir organizar arquivos em pastas e subpastas
+- **RF05:** O sistema deve permitir buscar arquivos por nome e tipo
+- **RF06:** O sistema deve permitir compartilhar arquivos com membros da organização
+- **RF07:** O sistema deve permitir compartilhar arquivos externamente através de links
+- **RF08:** O sistema deve permitir visualizar PDFs e imagens sem fazer download
+- **RF09:** O sistema deve mostrar quanto espaço de armazenamento está sendo usado (individual e da organização)
+- **RF10:** O sistema deve permitir excluir arquivos e pastas
 
 ### 5. Requisitos Não-Funcionais
 
-- **Estimativa de usuários:** 1.000-5.000 usuários ativos por mês
-- **Volume de dados:** ~500.000 arquivos no primeiro ano (~50TB de armazenamento)
-- **Requisitos de segurança:**
-  - Autenticação com suporte a dois fatores (2FA)
-  - Criptografia em repouso (AES-256) para todos os arquivos
-  - Transmissão de dados via HTTPS/TLS
-  - Conformidade com LGPD para dados de usuários brasileiros
-- **Disponibilidade esperada:** Alta (99.5% uptime)
+- **Estimativa de usuários:** 500-2.000 usuários ativos por mês
+- **Volume de dados:** ~50.000 arquivos no primeiro ano
+- **Segurança básica:** Login com usuário e senha; cada usuário só acessa seus próprios arquivos; administradores não acessam conteúdo de arquivos
+- **Disponibilidade esperada:** Alta (sistema deve estar disponível a maior parte do tempo)
 
 ### 6. Integrações Externas
 
-- **Armazenamento:** Integração com serviços de Blob Storage (AWS S3, Azure Blob, Google Cloud Storage)
-- **Pagamentos:** Stripe ou PayPal para gestão de assinaturas Premium
-- **Notificações:** Serviço de e-mail (SendGrid, AWS SES) para alertas e confirmações
-- **Autenticação:** Login social via Google e Microsoft (OAuth 2.0)
+- **Armazenamento em nuvem:** Para guardar os arquivos dos usuários de forma segura
+- **Envio de e-mails:** Para notificar usuários sobre compartilhamentos e recuperação de senha
 
 ### 7. Riscos e Desafios Técnicos
 
-1. **Conflitos de Sincronização:** Resolver situações onde dois dispositivos editam o mesmo arquivo simultaneamente em modo offline. Estratégia: implementar detecção de conflitos e permitir que o usuário escolha qual versão manter.
+1. **Perda de arquivos:** Risco de usuários perderem arquivos por falhas no sistema. É importante fazer backups regulares.
 
-2. **Integridade de Dados:** Garantir que arquivos não sejam corrompidos durante transferência em redes instáveis. Estratégia: utilizar checksums (SHA-256) para validação após upload.
+2. **Arquivos muito grandes:** Usuários podem tentar enviar arquivos muito grandes, causando lentidão. Pode ser necessário limitar o tamanho máximo de upload.
 
-3. **Consumo de Largura de Banda:** Sincronizar arquivos grandes sem comprometer a conexão do usuário. Estratégia: implementar sincronização delta (apenas blocos modificados).
+3. **Espaço de armazenamento:** O sistema pode ficar sem espaço se muitos usuários armazenarem muitos arquivos. É preciso monitorar o uso de espaço.
 
-4. **Conformidade Legal:** Armazenamento de dados seguindo LGPD, especialmente para exclusão definitiva de dados. Estratégia: implementar processo de "hard delete" com certificação de exclusão.
-
-5. **Escalabilidade de Armazenamento:** Crescimento imprevisível do volume de dados. Estratégia: arquitetura baseada em cloud storage com auto-scaling.
+4. **Acesso indevido:** Risco de pessoas acessarem arquivos que não deveriam. É importante garantir que cada usuário só veja seus próprios arquivos.
 
 ---
-

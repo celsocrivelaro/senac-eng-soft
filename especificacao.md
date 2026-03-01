@@ -70,7 +70,3 @@ Liste 3-5 riscos ou desafios simples, incluindo:
 - **Não detalhe aspectos avançados de segurança** (criptografia, tokens, OAuth, LGPD, etc.) — mantenha apenas conceitos básicos como login e controle de acesso
 - **Evite mencionar** tecnologias específicas de infraestrutura (sharding, load balancing, microserviços, etc.)
 - Termine o documento com uma linha horizontal (`---`)
-
-## Exemplo de Referência
-
-Consulte o arquivo `0.descricao-casos/financiamento-coletivo.md` como exemplo de estrutura e nível de detalhamento esperado.

@@ -1,4 +1,4 @@
-## Plataforma de Delivery de Comida (FoodFlow)
+## Plataforma de Delivery de Alimentos (FoodFlow)
 
 ### 1. Escopo e Objetivos
 

@@ -8,7 +8,7 @@ A plataforma **ArenaStream** conecta torcedores a eventos esportivos. O objetivo
 
 ### 2. Descrição do Sistema
 
-O sistema é organizado por **Organizadores de Eventos** (clubes, federações, empresas). Cada organizador pode criar e gerenciar seus próprios eventos esportivos, definir preços de ingressos e atualizar informações das partidas.
+O sistema é organizado por **Eventos** (clubes, federações, empresas criam eventos). Cada evento tem seu administrador que pode gerenciar partidas, definir preços de ingressos e atualizar informações.
 
 O sistema oferece:
 - **Busca de eventos:** Por modalidade esportiva, data e localização
@@ -18,8 +18,9 @@ O sistema oferece:
 
 ### 3. Atores e Fluxos Principais
 
-#### Organizador do Evento
-- Criar e configurar eventos esportivos
+#### Administrador do Evento
+- Cadastrar o evento esportivo na plataforma
+- Criar e configurar partidas
 - Definir local, data e horário das partidas
 - Configurar tipos de ingressos e preços
 - Atualizar placar durante o jogo
@@ -41,15 +42,15 @@ O sistema oferece:
 
 ### 4. Requisitos Funcionais
 
-- **RF01:** O sistema deve permitir criar e gerenciar eventos esportivos
-- **RF02:** O sistema deve permitir definir tipos de ingressos com preços diferentes
-- **RF03:** O sistema deve permitir buscar eventos por modalidade e data
-- **RF04:** O sistema deve permitir comprar ingressos online
-- **RF05:** O sistema deve gerar ingresso digital com QR Code
-- **RF06:** O sistema deve permitir atualizar placar em tempo real
-- **RF07:** O sistema deve mostrar o placar atualizado para os torcedores
-- **RF08:** O sistema deve permitir transmissões ao vivo de eventos
-- **RF09:** O sistema deve permitir configurar alertas para times favoritos
+- **RF01:** O sistema deve permitir cadastrar eventos esportivos
+- **RF02:** O sistema deve permitir criar e gerenciar partidas dentro de um evento
+- **RF03:** O sistema deve permitir definir tipos de ingressos com preços diferentes
+- **RF04:** O sistema deve permitir buscar eventos por modalidade e data
+- **RF05:** O sistema deve permitir comprar ingressos online
+- **RF06:** O sistema deve gerar ingresso digital com QR Code
+- **RF07:** O sistema deve permitir atualizar placar em tempo real
+- **RF08:** O sistema deve mostrar o placar atualizado para os torcedores
+- **RF09:** O sistema deve permitir transmissões ao vivo de eventos
 - **RF10:** O sistema deve manter histórico de eventos e ingressos do torcedor
 
 ### 5. Requisitos Não-Funcionais

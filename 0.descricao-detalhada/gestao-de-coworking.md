@@ -8,7 +8,7 @@ A plataforma **FlexWork** conecta profissionais a espaços de coworking. O objet
 
 ### 2. Descrição do Sistema
 
-O sistema é organizado por **Espaços de Coworking** (unidades em diferentes localizações). Cada espaço possui seus próprios recursos: mesas compartilhadas, salas de reunião, cabines privativas. Os gestores do espaço administram os recursos e membros.
+O sistema é organizado por **Espaços de Coworking** (unidades em diferentes localizações). Cada espaço possui seus próprios recursos: mesas compartilhadas, salas de reunião, cabines privativas. Os administradores do espaço gerenciam os recursos e membros.
 
 Tipos de reserva disponíveis:
 - **Mesa compartilhada:** Reserva de posição de trabalho por hora ou dia
@@ -17,7 +17,7 @@ Tipos de reserva disponíveis:
 
 ### 3. Atores e Fluxos Principais
 
-#### Gestor do Espaço
+#### Administrador do Espaço
 - Cadastrar o espaço de coworking na plataforma
 - Configurar recursos disponíveis (mesas, salas, cabines)
 - Definir preços por hora, dia ou plano mensal

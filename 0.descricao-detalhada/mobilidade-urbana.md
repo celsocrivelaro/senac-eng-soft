@@ -4,34 +4,35 @@
 
 Muitas pessoas precisam se deslocar pela cidade de forma rápida e prática, mas nem sempre têm carro próprio ou acesso fácil a transporte público. Por outro lado, motoristas com veículos disponíveis buscam oportunidades de trabalho flexível.
 
-A plataforma **CityGo** conecta passageiros a motoristas parceiros para viagens urbanas. O objetivo principal é permitir que o passageiro solicite uma viagem, acompanhe a chegada do motorista e chegue ao destino de forma segura e conveniente.
+A plataforma **CityGo** conecta passageiros a frotas de motoristas parceiros para viagens urbanas. O objetivo principal é permitir que o passageiro solicite uma viagem, acompanhe a chegada do motorista e chegue ao destino de forma segura e conveniente.
 
 ### 2. Descrição do Sistema
 
-O sistema funciona como um **marketplace de viagens**. Passageiros informam de onde querem sair e para onde querem ir. O sistema calcula o preço estimado, encontra um motorista disponível próximo e conecta os dois.
+O sistema é organizado por **Frotas** (cooperativas de motoristas, empresas de transporte, locadoras). Cada frota cadastra seus próprios motoristas e veículos, define suas regiões de atuação e acompanha o desempenho da equipe.
 
 O fluxo básico de uma viagem:
 1. Passageiro informa origem e destino
 2. Sistema calcula preço e tempo estimado
 3. Passageiro confirma a solicitação
-4. Sistema encontra motorista próximo e disponível
+4. Sistema encontra motorista de uma frota próxima e disponível
 5. Motorista aceita a viagem e vai buscar o passageiro
 6. Passageiro acompanha a chegada do motorista pelo mapa
 7. Viagem é realizada e pagamento processado automaticamente
 
 ### 3. Atores e Fluxos Principais
 
-#### Administrador da Plataforma
-- Aprovar cadastros de motoristas
-- Definir regras de precificação (valor por km, taxa mínima)
-- Visualizar relatórios de viagens realizadas
-- Resolver disputas entre passageiros e motoristas
-- Gerenciar pagamentos e repasses
+#### Administrador da Frota
+- Cadastrar a frota na plataforma
+- Cadastrar e gerenciar motoristas da frota
+- Registrar veículos e documentação
+- Definir regiões de atuação da frota
+- Visualizar relatórios de viagens da frota
+- Gerenciar pagamentos e repasses aos motoristas
 
-**Permissões:** Acesso administrativo geral da plataforma.
+**Permissões:** Gerencia apenas sua própria frota e seus motoristas.
 
 #### Motorista
-- Cadastrar-se como motorista parceiro
+- Vincular-se a uma frota
 - Registrar dados do veículo
 - Definir disponibilidade (online/offline)
 - Receber solicitações de viagem
@@ -53,22 +54,22 @@ O fluxo básico de uma viagem:
 
 ### 4. Requisitos Funcionais
 
-- **RF01:** O sistema deve permitir cadastro de motoristas com dados do veículo
-- **RF02:** O sistema deve permitir solicitar viagens com origem e destino
-- **RF03:** O sistema deve calcular preço estimado baseado na distância
-- **RF04:** O sistema deve encontrar motoristas disponíveis próximos ao passageiro
-- **RF05:** O sistema deve mostrar localização do motorista em tempo real
-- **RF06:** O sistema deve mostrar tempo estimado de chegada
-- **RF07:** O sistema deve processar pagamento automaticamente ao fim da viagem
-- **RF08:** O sistema deve permitir avaliação mútua (passageiro e motorista)
-- **RF09:** O sistema deve gerar recibo digital de cada viagem
-- **RF10:** O sistema deve permitir que o passageiro salve locais favoritos
+- **RF01:** O sistema deve permitir cadastrar frotas
+- **RF02:** O sistema deve permitir cadastrar motoristas vinculados a uma frota
+- **RF03:** O sistema deve permitir solicitar viagens com origem e destino
+- **RF04:** O sistema deve calcular preço estimado baseado na distância
+- **RF05:** O sistema deve encontrar motoristas disponíveis próximos ao passageiro
+- **RF06:** O sistema deve mostrar localização do motorista em tempo real
+- **RF07:** O sistema deve mostrar tempo estimado de chegada
+- **RF08:** O sistema deve processar pagamento automaticamente ao fim da viagem
+- **RF09:** O sistema deve permitir avaliação mútua (passageiro e motorista)
+- **RF10:** O sistema deve gerar recibo digital de cada viagem
 
 ### 5. Requisitos Não-Funcionais
 
 - **Estimativa de usuários:** 5.000-20.000 usuários ativos por mês
 - **Volume de dados:** ~100.000 viagens no primeiro ano
-- **Segurança básica:** Login com usuário e senha; passageiros e motoristas não veem dados pessoais completos um do outro
+- **Segurança básica:** Login com usuário e senha; administradores só acessam dados de sua frota; passageiros e motoristas não veem dados pessoais completos um do outro
 - **Disponibilidade esperada:** Alta (viagens podem ser solicitadas a qualquer hora)
 
 ### 6. Integrações Externas

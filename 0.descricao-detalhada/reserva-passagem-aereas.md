@@ -4,11 +4,11 @@
 
 Viajantes têm dificuldade em comparar preços de passagens aéreas entre diferentes companhias. Cada companhia tem seu site, preços e regras diferentes. Encontrar a melhor opção de voo exige muito tempo pesquisando.
 
-A plataforma **FlyHigh** facilita a busca e compra de passagens aéreas. O objetivo principal é permitir que o viajante pesquise voos de diferentes companhias, compare preços e horários, e faça a reserva de forma simples e segura.
+A plataforma **FlyHigh** facilita a busca e compra de passagens aéreas através de agências de viagem parceiras. O objetivo principal é permitir que o viajante pesquise voos de diferentes companhias, compare preços e horários, e faça a reserva de forma simples e segura.
 
 ### 2. Descrição do Sistema
 
-O sistema funciona como um **agregador de voos**. Quando o viajante pesquisa um trecho (origem → destino), o sistema busca opções de diferentes companhias aéreas e apresenta todas juntas para comparação.
+O sistema é organizado por **Agências de Viagem** (agências online, operadoras de turismo). Cada agência pode cadastrar seus voos disponíveis, definir preços e gerenciar as reservas de seus clientes.
 
 O sistema oferece:
 - **Busca de voos:** Por origem, destino, datas e número de passageiros
@@ -18,19 +18,20 @@ O sistema oferece:
 
 ### 3. Atores e Fluxos Principais
 
-#### Administrador da Plataforma
-- Cadastrar companhias aéreas parceiras
-- Configurar taxas de serviço da plataforma
-- Visualizar relatórios de vendas
-- Gerenciar disputas e cancelamentos
-- Atualizar informações de voos (quando necessário)
+#### Administrador da Agência
+- Cadastrar a agência na plataforma
+- Cadastrar voos disponíveis com preços
+- Configurar taxas de serviço da agência
+- Visualizar relatórios de vendas da agência
+- Gerenciar reservas e cancelamentos
+- Atualizar informações de voos
 
-**Permissões:** Acesso administrativo geral da plataforma.
+**Permissões:** Gerencia apenas sua própria agência e suas reservas.
 
 #### Viajante
 - Pesquisar voos por origem, destino e datas
 - Filtrar resultados por preço, horário e escalas
-- Comparar opções de diferentes companhias
+- Comparar opções de diferentes agências
 - Selecionar voo e informar dados dos passageiros
 - Escolher serviços adicionais (bagagem, assento)
 - Fazer pagamento online
@@ -41,27 +42,27 @@ O sistema oferece:
 
 ### 4. Requisitos Funcionais
 
-- **RF01:** O sistema deve permitir pesquisar voos por origem, destino e datas
-- **RF02:** O sistema deve mostrar voos de diferentes companhias aéreas
-- **RF03:** O sistema deve permitir filtrar por preço, horário e escalas
-- **RF04:** O sistema deve mostrar detalhes do voo (duração, bagagem incluída)
-- **RF05:** O sistema deve permitir selecionar voo e informar dados dos passageiros
-- **RF06:** O sistema deve permitir adicionar serviços (bagagem extra, escolha de assento)
-- **RF07:** O sistema deve processar pagamento online
-- **RF08:** O sistema deve enviar confirmação e código de reserva por e-mail
-- **RF09:** O sistema deve permitir visualizar e gerenciar reservas
+- **RF01:** O sistema deve permitir cadastrar agências de viagem
+- **RF02:** O sistema deve permitir pesquisar voos por origem, destino e datas
+- **RF03:** O sistema deve mostrar voos de diferentes agências
+- **RF04:** O sistema deve permitir filtrar por preço, horário e escalas
+- **RF05:** O sistema deve mostrar detalhes do voo (duração, bagagem incluída)
+- **RF06:** O sistema deve permitir selecionar voo e informar dados dos passageiros
+- **RF07:** O sistema deve permitir adicionar serviços (bagagem extra, escolha de assento)
+- **RF08:** O sistema deve processar pagamento online
+- **RF09:** O sistema deve enviar confirmação e código de reserva por e-mail
 - **RF10:** O sistema deve permitir cancelamento conforme regras da tarifa
 
 ### 5. Requisitos Não-Funcionais
 
 - **Estimativa de usuários:** 2.000-10.000 usuários ativos por mês
 - **Volume de dados:** ~20.000 reservas no primeiro ano
-- **Segurança básica:** Login com usuário e senha; dados de pagamento protegidos; dados de passageiros armazenados de forma segura
+- **Segurança básica:** Login com usuário e senha; administradores só acessam dados de sua agência; dados de pagamento protegidos; dados de passageiros armazenados de forma segura
 - **Disponibilidade esperada:** Alta (viajantes podem pesquisar e comprar a qualquer hora)
 
 ### 6. Integrações Externas
 
-- **Companhias aéreas:** Para buscar voos e confirmar reservas
+- **Sistema de reservas aéreas:** Para buscar voos e confirmar reservas
 - **Sistema de pagamentos:** Para processar compras de passagens
 - **Envio de e-mails:** Para confirmar reservas e enviar lembretes de viagem
 

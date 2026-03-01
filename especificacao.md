@@ -6,7 +6,9 @@ Você é um analista de sistemas sênior especializado em especificação de pro
 
 ## Contexto
 
-Esta descrição será usada por alunos de Engenharia de Software (Ciência da Computação) como base para um projeto semestral. Os alunos desenvolverão todos os artefatos do ciclo de vida do software: levantamento de requisitos, casos de uso, diagramas UML, prototipagem, testes, código orientado a objetos com Design Patterns e deploy em nuvem.
+Esta descrição será usada por alunos de Engenharia de Software (Ciência da Computação) como base para um projeto semestral. **Os alunos possuem baixa experiência em desenvolvimento de software**, portanto a descrição deve ser de alto nível, evitando detalhes técnicos muito avançados ou específicos de implementação.
+
+Os alunos desenvolverão todos os artefatos do ciclo de vida do software: levantamento de requisitos, casos de uso, diagramas UML, prototipagem, testes, código orientado a objetos com Design Patterns e deploy em nuvem.
 
 ## Entrada
 
@@ -42,28 +44,31 @@ Liste 5-8 requisitos funcionais principais no formato:
 Inclua obrigatoriamente:
 - **Estimativa de usuários** (ex: 500-2000 usuários ativos/mês)
 - **Volume de dados** (ex: ~10.000 registros no primeiro ano)
-- **Requisitos de segurança** (autenticação, proteção de dados, LGPD)
+- **Segurança básica** (apenas mencionar: login com senha, controle de acesso por tipo de usuário). Não detalhar criptografia, protocolos ou padrões avançados.
 - **Disponibilidade esperada** (ex: Alta, Média, Baixa)
 
 ### 6. Integrações Externas
-Liste integrações necessárias, especialmente:
-- Sistemas de pagamento (se aplicável): Stripe, PayPal, Pix
-- APIs de terceiros (mapas, e-mail, SMS, etc.)
+Liste integrações de forma **simplificada e conceitual**, sem detalhar implementação técnica:
+- Mencionar apenas o **tipo** de integração necessária (ex: "sistema de pagamentos", "envio de e-mails", "mapas")
+- **Não especificar** provedores ou tecnologias (evitar mencionar Stripe, AWS, OAuth, webhooks, etc.)
+- Focar no **objetivo da integração** para o usuário final
 
 ### 7. Riscos e Desafios Técnicos
-Liste 3-5 riscos ou desafios, incluindo:
-- Riscos técnicos (escalabilidade, segurança)
-- Riscos de negócio (adoção, regulamentação)
-- Desafios de implementação
+Liste 3-5 riscos ou desafios simples, incluindo:
+- Riscos técnicos básicos (ex: perda de dados, lentidão)
+- Riscos de negócio (ex: falta de usuários, concorrência)
+- Desafios de implementação acessíveis para iniciantes
 
 ---
 
 ## Restrições
 
-- Considere volume **médio** de acessos (não pense em escala de grandes empresas)
-- Use linguagem técnica, mas acessível para estudantes
-- Foque na **viabilidade** de implementação em um semestre
+- Considere volume **pequeno a médio** de acessos (não pense em escala de grandes empresas)
+- Use linguagem técnica, mas **acessível para estudantes iniciantes**
+- Foque na **viabilidade** de implementação em um semestre por alunos com pouca experiência
 - Evite funcionalidades excessivamente complexas para um MVP
+- **Não detalhe aspectos avançados de segurança** (criptografia, tokens, OAuth, LGPD, etc.) — mantenha apenas conceitos básicos como login e controle de acesso
+- **Evite mencionar** tecnologias específicas de infraestrutura (sharding, load balancing, microserviços, etc.)
 - Termine o documento com uma linha horizontal (`---`)
 
 ## Exemplo de Referência

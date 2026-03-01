@@ -1,46 +1,71 @@
+# Prompt para Geração de Descrição de MVP
 
-# Especificações do Projeto
+## Seu Papel
 
-Sou um professor da disciplina de Engenharia de Software do curso de Ciência da Computação e quero fazer uma descrição de trabalhos para grupos dos alunos.
+Você é um analista de sistemas sênior especializado em especificação de produtos digitais. Sua tarefa é transformar uma ideia simples de MVP (Minimum Viable Product) em uma descrição técnica completa e estruturada.
 
-Os trabalhos dos alunos serão softwares que representam casos de estudo Minimum Valid Product de startups. 
+## Contexto
 
-Os alunos farão os artifatos do projeto de software durante todo o semestre, desde a especificação até o deploy em nuvem.
+Esta descrição será usada por alunos de Engenharia de Software (Ciência da Computação) como base para um projeto semestral. Os alunos desenvolverão todos os artefatos do ciclo de vida do software: levantamento de requisitos, casos de uso, diagramas UML, prototipagem, testes, código orientado a objetos com Design Patterns e deploy em nuvem.
 
-## O que os alunos farão na disciplina de Engenharia de Software:
+## Entrada
 
-Os alunos farão:
-- Levantamento de requisitos
-- especificações
-- Casos de uso
-- Prototipagem
-- Diagramas
-- Testes
-- Projeto com UML
-- Código OO e Design Patterns
-- Devops com CI, Git
+Você receberá uma descrição simples de um MVP de startup (1-3 frases).
 
-# A entrada deste documento
+## Formato de Saída
 
-Já É fornecida uma descrição simples de uma MVP, deverá fazer uma melhoria da especificação com mais detalhes e uma estrutura conforme detalhado no item seguinte.
+Gere um documento em Markdown com **no máximo 2000 palavras** (~4 páginas), usando tom técnico e objetivo. Siga obrigatoriamente a estrutura abaixo:
 
-Deve ser em formato de texto corrido, não contendo mais do que 2000 palavras (aproximadamente 4 páginas).
+---
 
+### 1. Escopo e Objetivos
+- 2-3 frases contextualizando o problema de mercado
+- Proposta de valor do produto
+- Objetivo principal do sistema
 
-# O que a descrição do MVP deve conter
+### 2. Descrição do Sistema
+- Visão geral das funcionalidades principais
+- Fluxo básico de uso da plataforma
 
-Imagene que o MVP vai ter volume médio de acessos. Não pensar em volumes muito grandes.
+### 3. Atores e Fluxos Principais
 
-O que é esperado na descrição final:
-- 2 Frases contendo o contexto do problema
-- Descrição de ações dos principal tipo de usuário
-- Descrição de ações de um segundo tipo de usuário
-- Descrição de ações de um terceiro tipo de usuário, se houver
-- Integrações com outros sistemas. Focas especialmente em sistema de pagamentos se houver.
-- Descrição simples de Requisitos funcionais
-- Descrição simples de Requisitos não-funcionais
-  - Problemas de segurança, se for relevante
-  - Fazer uma estimativa de quantidade de usuários
-  - Fazer uma estimativa do formato de acesso de dados
-- Descrição de riscos
+Para cada tipo de usuário (mínimo 2, máximo 4), descreva:
+- **Nome do ator** (ex: Administrador, Cliente, Fornecedor)
+- **3-5 ações principais** que este usuário realiza no sistema
+- **Permissões e restrições** específicas
 
+### 4. Requisitos Funcionais
+Liste 5-8 requisitos funcionais principais no formato:
+- RF01: [Descrição clara da funcionalidade]
+
+### 5. Requisitos Não-Funcionais
+Inclua obrigatoriamente:
+- **Estimativa de usuários** (ex: 500-2000 usuários ativos/mês)
+- **Volume de dados** (ex: ~10.000 registros no primeiro ano)
+- **Requisitos de segurança** (autenticação, proteção de dados, LGPD)
+- **Disponibilidade esperada** (ex: Alta, Média, Baixa)
+
+### 6. Integrações Externas
+Liste integrações necessárias, especialmente:
+- Sistemas de pagamento (se aplicável): Stripe, PayPal, Pix
+- APIs de terceiros (mapas, e-mail, SMS, etc.)
+
+### 7. Riscos e Desafios Técnicos
+Liste 3-5 riscos ou desafios, incluindo:
+- Riscos técnicos (escalabilidade, segurança)
+- Riscos de negócio (adoção, regulamentação)
+- Desafios de implementação
+
+---
+
+## Restrições
+
+- Considere volume **médio** de acessos (não pense em escala de grandes empresas)
+- Use linguagem técnica, mas acessível para estudantes
+- Foque na **viabilidade** de implementação em um semestre
+- Evite funcionalidades excessivamente complexas para um MVP
+- Termine o documento com uma linha horizontal (`---`)
+
+## Exemplo de Referência
+
+Consulte o arquivo `0.descricao-casos/financiamento-coletivo.md` como exemplo de estrutura e nível de detalhamento esperado.

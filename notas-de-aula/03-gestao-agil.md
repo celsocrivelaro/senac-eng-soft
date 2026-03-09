@@ -1,4 +1,4 @@
-# Aula 02 – Metodologias Ágeis: Scrum e XP
+# Aula 03 – Metodologias Ágeis: Scrum e XP
 ---
 
 ## Objetivos de Aprendizagem

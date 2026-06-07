@@ -1,8 +1,5 @@
 # Documento de visão do Produto
 
-Melhorado: Yes
-Number: 1
-
 Cada grupo recebeu um estudo de caso para a disciplina de Engenharia de Software. Com ele, deve-se definir o documento de visão do projeto com detalhes especificados abaixo.
 
 Casos de estudo dos trabalhos:

@@ -7,7 +7,7 @@ Cada grupo recebeu um estudo de caso para a disciplina de Engenharia de Software
 
 Casos de estudo dos trabalhos:
 
-[https://github.com/celsocrivelaro/senac-eng-soft/tree/main/0.descricao-detalhada](https://github.com/celsocrivelaro/senac-eng-soft/tree/main/0.descricao-detalhada)
+[https://github.com/celsocrivelaro/senac-eng-soft/tree/main/trabalho_temas](https://github.com/celsocrivelaro/senac-eng-soft/tree/main/trabalho_temas)
 
 [https://youtu.be/eh0-2MQiklg](https://youtu.be/eh0-2MQiklg)
 

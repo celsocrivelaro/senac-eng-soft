@@ -1,10 +1,5 @@
 # Trabalho 3 - Modelagem
 
-> **Pré-requisitos entregues:**
-- Documento de Visão do Produto (Trabalho 1)
-- Documento de Requisitos (Trabalho 2 — casos de uso, MoSCoW, requisitos não funcionais)
-> 
-> 
 > **Filosofia deste trabalho:** profundidade sobre largura. Em vez de modelar superficialmente todo o sistema, vocês vão **selecionar um subconjunto representativo dos requisitos** e modelá-lo em profundidade. A escolha do que modelar é parte do trabalho — e deve ser justificada.
 > 
 

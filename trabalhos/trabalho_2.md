@@ -1,10 +1,5 @@
 # Requisitos do projeto
 
-Melhorado: Yes
-Number: 2
-
-# Trabalho: Documento de Requisitos
-
 A partir da visão de projeto, devemos construir os documentos de requisitos das startups de cada estudo de caso.
 
 ---

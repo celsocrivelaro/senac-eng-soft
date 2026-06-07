@@ -126,13 +126,12 @@ Vamos criar um exemplo de análise de risco para um projeto de desenvolvimento d
 | Ação de Mitigação | Conversar com os usuários como eles armazenam os dados em seus computadores |
 | Plano de Contingência | Fazer um cadastro manual 1 a 1 |
 
-# A entrega
+## Forma de entrega
 
-Deverá ser feita em formato de documento escrito seguindo os padrões requisitados
-
-A entrega deve ser feita em um projeto markdown em um repositório no Github.
-
-NÃO SERÁ ACEITO WORD OU PDF.
+- A entrega deve ser feita **exclusivamente** em um repositório no **GitHub**, em formato de documento escrito (**Markdown**), seguindo os padrões requisitados.
+- **NÃO SERÁ ACEITO WORD OU PDF**, nem entrega por qualquer outro canal que não o repositório no GitHub.
+- Este é o **primeiro trabalho** da disciplina: o repositório criado aqui deverá ser **reutilizado nos trabalhos seguintes** (Requisitos e Modelagem). Mantenham a organização do projeto pensando nessa continuidade.
+- Quaisquer **diagramas** (incluindo os wireframes de baixíssima resolução) devem ser feitos com **Mermaid** (https://mermaid.js.org), que renderiza nativamente no GitHub e mantém o diagrama versionado como texto. Não serão aceitos *screenshots* de quadro-branco ou de papel.
 
 Deverá ter referências externas sobre as definições do problema.
 

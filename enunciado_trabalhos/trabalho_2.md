@@ -119,15 +119,14 @@ Cada requisito não funcional deve ser documentado no seguinte formato:
 
 ---
 
-## 3. Entrega
+## 3. Forma de entrega
 
-Deverá ser feita em formato de documento escrito seguindo os padrões requisitados
+- A entrega deve ser feita **exclusivamente** em um repositório no **GitHub**, em formato de documento escrito (**Markdown**), seguindo os padrões requisitados.
+- **NÃO SERÁ ACEITO WORD OU PDF**, nem entrega por qualquer outro canal que não o repositório no GitHub.
+- Pode-se utilizar o **mesmo repositório do Trabalho 1** (Documento de Visão), apenas organizando este trabalho em uma nova pasta ou arquivo dentro dele. Não é necessário criar um repositório novo.
+- Quaisquer **diagramas** devem ser feitos com **Mermaid** (https://mermaid.js.org), que renderiza nativamente no GitHub e mantém o diagrama versionado como texto. Não serão aceitos *screenshots* de quadro-branco ou de papel.
 
-A entrega deve ser feita em um projeto markdown em um repositório no Github.
-
-NÃO SERÁ ACEITO WORD OU PDF.
-
-A entrega deverá ser feita em formato de documento escrito seguindo os padrões requisitados:
+O documento deve seguir os padrões requisitados:
 
 - Seguir padrões da **ABNT** e **IEEE** conforme indicado em cada seção.
 - O documento deve conter todas as seções descritas acima de forma organizada e coesa.

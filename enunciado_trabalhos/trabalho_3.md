@@ -345,9 +345,10 @@ Essa tabela é o **ativo mais importante do trabalho** — ela mostra que o grup
 
 ---
 
-## 6. Entrega
+## 6. Forma de entrega
 
-A entrega deve ser feita em **repositório no GitHub** com documentação em **Markdown** — **não serão aceitos Word ou PDF**.
+- A entrega deve ser feita **exclusivamente** em um **repositório no GitHub**, com documentação em **Markdown** — **não serão aceitos Word ou PDF**, nem entrega por qualquer outro canal que não o repositório no GitHub.
+- Pode-se utilizar o **mesmo repositório dos trabalhos anteriores** (Visão e Requisitos), apenas organizando este trabalho em uma nova pasta (ex.: `docs/`) dentro dele. Não é necessário criar um repositório novo.
 
 ### 6.1 Estrutura sugerida do repositório
 
@@ -355,24 +356,22 @@ A entrega deve ser feita em **repositório no GitHub** com documentação em **M
 README.md                        — visão geral + link para o documento principal
 docs/
   00-selecao-de-escopo.md        — Seção 0 (justificativa das 3 fatias)
-  01-diagrama-de-classes.md      — Seção 1 (com imagem do diagrama embutida)
+  01-diagrama-de-classes.md      — Seção 1 (com o diagrama Mermaid embutido)
   02-mer.md                      — Seção 2
   03-comportamental-fatia1.md    — Seção 3, fatia 1
   03-comportamental-fatia2.md    — Seção 3, fatia 2
   03-comportamental-fatia3.md    — Seção 3, fatia 3
   04-casos-de-teste.md           — Seção 4
   05-rastreabilidade.md          — Seção 5
-images/
-  *.png ou *.svg                 — diagramas (ou usar Mermaid inline no Markdown)
 references.md                    — bibliografia (ABNT)
 ```
 
 ### 6.2 Diagramas
 
-**Diagramas devem ser legíveis** — não aceito *screenshots* de quadro-branco ou de papel. Usem uma ferramenta:
+**Todos os diagramas devem ser feitos com Mermaid** (https://mermaid.js.org), inseridos diretamente no Markdown. O Mermaid renderiza nativamente no GitHub, é o caminho mais leve para integrar com Markdown e mantém o diagrama versionado como texto.
 
-- **Mermaid** (https://mermaid.js.org) — renderiza nativo no GitHub, é o caminho mais leve para integrar com Markdown, e dá controle de versão (o diagrama é texto). **Recomendação principal.**
-- **PlantUML** (https://plantuml.com) — também baseado em texto, mais maduro para UML completa.
+- **Diagramas devem ser legíveis** — **não serão aceitos** *screenshots* de quadro-branco, de papel ou imagens exportadas de outras ferramentas.
+- O uso de Mermaid é **obrigatório**: diagramas de classes, MER e comportamentais (sequência, estados, atividades) devem todos ser escritos em sintaxe Mermaid no próprio Markdown.
 
 ### 6.3 Padrões a seguir
 

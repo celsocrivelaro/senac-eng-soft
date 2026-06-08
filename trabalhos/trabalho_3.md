@@ -277,72 +277,27 @@ Essa escolha consciente vale tanto quanto o diagrama em si — é prática de **
 
 ---
 
-## 4. Casos de teste das fatias modeladas
-
-Para cada uma das **3 fatias selecionadas**, elaborem **2 casos de teste** seguindo o padrão IEEE — totalizando **6 casos de teste**.
-
-### 4.1 Template do caso de teste
-
-Cada caso deve usar o seguinte template:
-
-| Campo | Conteúdo |
-| --- | --- |
-| **ID** | Identificador (ex.: TC-FATIA1-01) |
-| **Fatia / História de usuário** | Qual fatia e qual história de usuário do Trabalho 2 |
-| **Pré-condições** | Estado do sistema antes do teste |
-| **Dados de entrada** | Valores específicos a serem usados |
-| **Passos** | Sequência de ações |
-| **Resultado esperado** | O que o sistema deve fazer |
-| **Critério de aprovação** | Condição mensurável para passar |
-| **Severidade em caso de falha** | Crítica / Alta / Média / Baixa |
-
-### 4.2 Critério de seleção dos 6 casos
-
-Dos 2 casos por fatia, **pelo menos 1 deve ser um caso de fronteira** — não apenas “caminho feliz”. Casos de fronteira incluem:
-
-- **Valor limítrofe** (BVA — boundary value analysis): testar exatamente no limite de uma regra. Ex.: pedido de R$ 99,99 (frete cobrado) vs R$ 100,00 (frete grátis).
-- **Transição crítica de estado**: testar uma transição que tem regra específica. Ex.: tentar cancelar uma entrega que já está `Em Trânsito` (não deve permitir).
-- **Caminho de erro**: testar comportamento quando algo falha. Ex.: cartão recusado pelo gateway, ou timeout de coleta pelo entregador.
-
-A intenção é exercitar a noção de que casos de teste se desenham com **método** — não escolhendo aleatoriamente.
-
-### 4.3 Exemplo de caso de teste preenchido
-
-| Campo | Conteúdo |
-| --- | --- |
-| **ID** | TC-FATIA1-02 |
-| **Fatia / História de usuário** | Fatia 1 (checkout) — US-CC-007 (pagamento seguro) |
-| **Pré-condições** | Cliente autenticado; carrinho com 1 livro de R$ 50,00 + frete R$ 15,00; cartão de crédito cadastrado no perfil. |
-| **Dados de entrada** | Cartão com saldo insuficiente (mock do gateway configurado para retornar `INSUFFICIENT_FUNDS`). |
-| **Passos** | 1) Cliente clica em “Finalizar Compra”; 2) Cliente confirma forma de pagamento; 3) Cliente clica em “Pagar”. |
-| **Resultado esperado** | Sistema exibe mensagem “Pagamento recusado: saldo insuficiente”; pedido **não é** criado; estoque **não é** baixado; carrinho permanece intacto. |
-| **Critério de aprovação** | (a) Mensagem de erro clara e específica é exibida; (b) Nenhum registro de pedido é criado no banco; (c) Quantidade do livro no estoque permanece igual. |
-| **Severidade em caso de falha** | **Crítica** — bug aqui significa pedido criado sem pagamento confirmado, dor financeira direta. |
-
-> Nota: este trabalho **não é um plano de testes completo** — é uma amostra de casos de teste rastreável às fatias modeladas. Plano de testes formal pode ser tema de trabalho futuro.
-> 
-
----
-
-## 5. Rastreabilidade
+## 4. Rastreabilidade
 
 Inclua uma **tabela de rastreabilidade** ao final do documento, mostrando como os artefatos se conectam:
 
-| Fatia | Histórias de usuário (T2) | Classes envolvidas | Entidades MER | Diagrama comportamental | Casos de teste |
-| --- | --- | --- | --- | --- | --- |
-| Fatia 1 | US-CC-003, US-CC-007, US-PA-002 | `Cliente`, `Carrinho`, `Pedido`, `ItemPedido`, `Pagamento` | `cliente`, `pedido`, `item_pedido`, `pagamento` | Sequência (Seção 3.1) | TC-FATIA1-01, TC-FATIA1-02 |
-| Fatia 2 | US-LOG-004, US-LOG-006, US-LOG-009 | `Entrega`, `Entregador`, `Avaliacao` | `entrega`, `entregador`, `avaliacao` | Estados (Seção 3.2) | TC-FATIA2-01, TC-FATIA2-02 |
-| Fatia 3 | US-CC-011, US-CC-014, US-CC-016 | `Livro`, `LivroNovo`, `LivroUsado`, `LivroRaro`, `Comissao` | `livro`, `categoria_comissao` | Atividades (Seção 3.3) | TC-FATIA3-01, TC-FATIA3-02 |
+| Fatia | Histórias de usuário (T2) | Classes envolvidas | Entidades MER | Diagrama comportamental |
+| --- | --- | --- | --- | --- |
+| Fatia 1 | US-CC-003, US-CC-007, US-PA-002 | `Cliente`, `Carrinho`, `Pedido`, `ItemPedido`, `Pagamento` | `cliente`, `pedido`, `item_pedido`, `pagamento` | Sequência (Seção 3.1) |
+| Fatia 2 | US-LOG-004, US-LOG-006, US-LOG-009 | `Entrega`, `Entregador`, `Avaliacao` | `entrega`, `entregador`, `avaliacao` | Estados (Seção 3.2) |
+| Fatia 3 | US-CC-011, US-CC-014, US-CC-016 | `Livro`, `LivroNovo`, `LivroUsado`, `LivroRaro`, `Comissao` | `livro`, `categoria_comissao` | Atividades (Seção 3.3) |
 
 Essa tabela é o **ativo mais importante do trabalho** — ela mostra que o grupo entende a relação entre os modelos, e não apenas que “fez os diagramas”. Ela é também o que torna defensável, na avaliação, o recorte feito na Seção 0.
 
+> As **mesmas 3 fatias** modeladas aqui são a base do **Trabalho 4 — Casos de Teste**, onde elas viram casos de teste rastreáveis.
+
 ---
 
-## 6. Entrega
+## 5. Entrega
 
 A entrega deve ser feita em **repositório no GitHub** com documentação em **Markdown** — **não serão aceitos Word ou PDF**.
 
-### 6.1 Estrutura sugerida do repositório
+### 5.1 Estrutura sugerida do repositório
 
 ```
 README.md                        — visão geral + link para o documento principal
@@ -353,27 +308,25 @@ docs/
   03-comportamental-fatia1.md    — Seção 3, fatia 1
   03-comportamental-fatia2.md    — Seção 3, fatia 2
   03-comportamental-fatia3.md    — Seção 3, fatia 3
-  04-casos-de-teste.md           — Seção 4
-  05-rastreabilidade.md          — Seção 5
+  04-rastreabilidade.md          — Seção 4
 images/
   *.png ou *.svg                 — diagramas (ou usar Mermaid inline no Markdown)
 references.md                    — bibliografia (ABNT)
 ```
 
-### 6.2 Diagramas
+### 5.2 Diagramas
 
 **Diagramas devem ser legíveis** — não aceito *screenshots* de quadro-branco ou de papel. Usem uma ferramenta:
 
 - **Mermaid** (https://mermaid.js.org) — renderiza nativo no GitHub, é o caminho mais leve para integrar com Markdown, e dá controle de versão (o diagrama é texto). **Recomendação principal.**
 - **PlantUML** (https://plantuml.com) — também baseado em texto, mais maduro para UML completa.
 
-### 6.3 Padrões a seguir
+### 5.3 Padrões a seguir
 
 - **ABNT** para citações e referências.
-- **IEEE-830** nos casos de teste (template fornecido na Seção 4).
 - **Markdown** padrão CommonMark/GFM.
 
-### 6.4 Políticas que se aplicam
+### 5.4 Políticas que se aplicam
 
 - [Política antiplágio](https://www.notion.so/Pol-tica-antipl-gio-5187d7b1ab514bfb8424ac0fcfb59dba)
 - [Política de uso de ferramentas generativas de IA](https://www.notion.so/Pol-tica-de-uso-de-ferramentas-generativas-de-IA-2-353a6ec0abcd807285f9c609011f7c3e)
@@ -386,6 +339,5 @@ references.md                    — bibliografia (ABNT)
 - FOWLER, M. *UML Distilled: A Brief Guide to the Standard Object Modeling Language*. 3rd ed. Addison-Wesley, 2003.
 - GAMMA, E.; HELM, R.; JOHNSON, R.; VLISSIDES, J. *Padrões de Projeto: Soluções Reutilizáveis de Software Orientado a Objetos*. Bookman, 2000.
 - HEUSER, C. A. *Projeto de Banco de Dados*. 6ª ed. Bookman, 2008. (Para o MER.)
-- IEEE Std 829-2008. *IEEE Standard for Software and System Test Documentation*.
 - Markdown Guide: https://www.markdownguide.org/getting-started/
 - Mermaid Diagram Syntax: https://mermaid.js.org/intro/

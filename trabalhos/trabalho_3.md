@@ -13,7 +13,7 @@ A ideia é simples: vocês não vão modelar o sistema inteiro. Vão escolher **
 
 ### 0.1 O que é uma “fatia vertical”?
 
-Uma **fatia vertical** é um caso de uso completo, ponta a ponta, atravessando os componentes que ele toca. Não é “uma tela”, não é “uma classe”. É um fluxo coerente que tem início (alguém aciona), meio (o sistema processa) e fim (algo muda no estado do sistema, alguém recebe valor).
+Uma **fatia vertical** é uma história de usuário completa, ponta a ponta, atravessando os componentes que ela toca. Não é “uma tela”, não é “uma classe”. É um fluxo coerente que tem início (alguém aciona), meio (o sistema processa) e fim (algo muda no estado do sistema, alguém recebe valor).
 
 Exemplos do que **é** fatia vertical:
 - “Cliente finaliza um pedido de livros”
@@ -37,11 +37,11 @@ As 3 fatias escolhidas devem cobrir, no conjunto, **os três critérios abaixo**
 
 Para cada fatia escolhida, escrevam 2-4 linhas explicando:
 
-- Qual casos de uso (ou conjunto de casos) ela cobre.
+- Quais histórias de usuário (ou conjunto de histórias) ela cobre.
 - Por que ela é representativa o suficiente para merecer modelagem aprofundada.
 - O que o grupo espera **aprender** modelando essa fatia (regra de negócio? fluxo distribuído? estado complexo?).
 
-E, ao final, listem explicitamente os casos de uso do Trabalho 2 que **não** serão modeladas. O objetivo é deixar transparente o recorte feito.
+E, ao final, listem explicitamente as histórias de usuário do Trabalho 2 que **não** serão modeladas. O objetivo é deixar transparente o recorte feito.
 
 ### 0.4 Exemplo trabalhado — Marketplace de Livrarias e Sebos
 
@@ -64,7 +64,7 @@ A plataforma tem três subsistemas principais:
 
 ### Fatia 1 — Cliente finaliza pedido de livro com pagamento
 
-**Casos de uso cobertos:** US-CC-003 (“Como cliente, quero adicionar livros de diferentes lojistas ao carrinho para comparar antes de comprar”), US-CC-007 (“Como cliente, quero pagar meu pedido com cartão de crédito de forma segura”), US-PA-002 (“Como cliente, quero receber confirmação imediata após o pagamento aprovado”).
+**Histórias de usuário cobertas:** US-CC-003 (“Como cliente, quero adicionar livros de diferentes lojistas ao carrinho para comparar antes de comprar”), US-CC-007 (“Como cliente, quero pagar meu pedido com cartão de crédito de forma segura”), US-PA-002 (“Como cliente, quero receber confirmação imediata após o pagamento aprovado”).
 
 **Por que é representativa:**
 - É **Must Have** absoluto — sem checkout, não há marketplace.
@@ -79,7 +79,7 @@ A plataforma tem três subsistemas principais:
 
 ### Fatia 2 — Ciclo de vida da entrega, do aceite até a confirmação de recebimento
 
-**Casos de uso cobertos:** US-LOG-004 (“Como entregador, quero visualizar entregas disponíveis perto de mim e aceitar a que eu quiser”), US-LOG-006 (“Como cliente, quero acompanhar em tempo real onde está meu pedido”), US-LOG-009 (“Como cliente, quero confirmar que recebi o pedido e avaliar o entregador”).
+**Histórias de usuário cobertas:** US-LOG-004 (“Como entregador, quero visualizar entregas disponíveis perto de mim e aceitar a que eu quiser”), US-LOG-006 (“Como cliente, quero acompanhar em tempo real onde está meu pedido”), US-LOG-009 (“Como cliente, quero confirmar que recebi o pedido e avaliar o entregador”).
 
 **Por que é representativa:**
 - Envolve **três atores distintos**: Lojista (origina), Entregador (executa), Cliente (recebe).
@@ -94,7 +94,7 @@ A plataforma tem três subsistemas principais:
 
 ### Fatia 3 — Lojista cadastra livro com cálculo dinâmico de comissão
 
-**Casos de uso cobertos:** US-CC-011 (“Como lojista, quero cadastrar um livro do meu acervo informando título, autor, edição, preço e estado de conservação”), US-CC-014 (“Como lojista, quero ver quanto vou receber líquido por venda, depois das taxas da plataforma”), US-CC-016 (“Como administrador da plataforma, quero definir comissões diferenciadas por categoria de livro”).
+**Histórias de usuário cobertas:** US-CC-011 (“Como lojista, quero cadastrar um livro do meu acervo informando título, autor, edição, preço e estado de conservação”), US-CC-014 (“Como lojista, quero ver quanto vou receber líquido por venda, depois das taxas da plataforma”), US-CC-016 (“Como administrador da plataforma, quero definir comissões diferenciadas por categoria de livro”).
 
 **Por que é representativa:**
 - Tem **regras de negócio não-triviais**: a comissão da plataforma depende da categoria (novo / usado / raro), do volume de vendas do lojista (lojistas de alto volume pagam comissão menor) e de promoções vigentes.
@@ -119,7 +119,7 @@ Os três critérios estão cobertos. Cada fatia traz uma dimensão diferente do 
 
 ### O que fica de fora (e por quê)
 
-Os seguintes casos de uso do Trabalho 2 **não serão modeladas** neste trabalho:
+As seguintes histórias de usuário do Trabalho 2 **não serão modeladas** neste trabalho:
 
 - **Cadastro e autenticação de usuários** (US-CC-001, US-CC-002): fluxo padrão de login/cadastro, sem regra de negócio específica do domínio. Modelar não traria insight novo.
 - **Sistema de recomendação** (US-CC-019, US-CC-020): mencionado no estudo de caso como diferencial, mas é uma funcionalidade que depende fortemente de algoritmos de ML/heurísticas, fora do escopo de modelagem orientada a domínio. Trataremos como uma “caixa preta” que consome dados do histórico.
@@ -143,7 +143,7 @@ O que **não** é uma boa seleção:
 - Três fatias todas dentro do mesmo subsistema (não exercita interação).
 - Três fatias todas CRUD simples (não exercita regra de negócio).
 - “Vamos modelar ‘pedido’ inteiro” — pedido inteiro tem dezenas de fluxos; precisa recortar.
-- “Escolhemos os três primeiros casos de uso do backlog” — sem critério, sem aprendizado deliberado.
+- “Escolhemos as três primeiras histórias de usuário do backlog” — sem critério, sem aprendizado deliberado.
 
 ---
 
@@ -177,7 +177,7 @@ Para cada classe, identifiquem:
 - Pelo menos uma classe abstrata ou interface, quando o domínio comportar.
 - Multiplicidades em todas as associações (`1`, `0..1`, `0..*`, `1..*`).
 - Sem “classes God” com 20+ atributos. Se aparecer, é sinal de que o domínio não foi decomposto.
-- Coerência com o caso de uso: cada classe deve ter rastreabilidade clara para uma necessidade do Trabalho 2.
+- Coerência com a história de usuário: cada classe deve ter rastreabilidade clara para uma necessidade do Trabalho 2.
 
 > 💡 **Dica do exemplo do marketplace:** se vocês forem modelar a Fatia 3 (cadastro com comissão), pensem se faz sentido ter `Livro` abstrato com subclasses `LivroNovo`, `LivroUsado`, `LivroRaro`, ou se uma única classe `Livro` com atributo `categoria` resolve. Há vantagens e desvantagens em cada escolha — discutam.
 > 
@@ -288,7 +288,7 @@ Cada caso deve usar o seguinte template:
 | Campo | Conteúdo |
 | --- | --- |
 | **ID** | Identificador (ex.: TC-FATIA1-01) |
-| **Fatia / Caso de uso** | Qual fatia e qual caso de uso de usuário do Trabalho 2 |
+| **Fatia / História de usuário** | Qual fatia e qual história de usuário do Trabalho 2 |
 | **Pré-condições** | Estado do sistema antes do teste |
 | **Dados de entrada** | Valores específicos a serem usados |
 | **Passos** | Sequência de ações |
@@ -311,7 +311,7 @@ A intenção é exercitar a noção de que casos de teste se desenham com **mét
 | Campo | Conteúdo |
 | --- | --- |
 | **ID** | TC-FATIA1-02 |
-| **Fatia / Caso de uso** | Fatia 1 (checkout) — US-CC-007 (pagamento seguro) |
+| **Fatia / História de usuário** | Fatia 1 (checkout) — US-CC-007 (pagamento seguro) |
 | **Pré-condições** | Cliente autenticado; carrinho com 1 livro de R$ 50,00 + frete R$ 15,00; cartão de crédito cadastrado no perfil. |
 | **Dados de entrada** | Cartão com saldo insuficiente (mock do gateway configurado para retornar `INSUFFICIENT_FUNDS`). |
 | **Passos** | 1) Cliente clica em “Finalizar Compra”; 2) Cliente confirma forma de pagamento; 3) Cliente clica em “Pagar”. |
@@ -328,7 +328,7 @@ A intenção é exercitar a noção de que casos de teste se desenham com **mét
 
 Inclua uma **tabela de rastreabilidade** ao final do documento, mostrando como os artefatos se conectam:
 
-| Fatia | Casos de Uso(s) (T2) | Classes envolvidas | Entidades MER | Diagrama comportamental | Casos de teste |
+| Fatia | Histórias de usuário (T2) | Classes envolvidas | Entidades MER | Diagrama comportamental | Casos de teste |
 | --- | --- | --- | --- | --- | --- |
 | Fatia 1 | US-CC-003, US-CC-007, US-PA-002 | `Cliente`, `Carrinho`, `Pedido`, `ItemPedido`, `Pagamento` | `cliente`, `pedido`, `item_pedido`, `pagamento` | Sequência (Seção 3.1) | TC-FATIA1-01, TC-FATIA1-02 |
 | Fatia 2 | US-LOG-004, US-LOG-006, US-LOG-009 | `Entrega`, `Entregador`, `Avaliacao` | `entrega`, `entregador`, `avaliacao` | Estados (Seção 3.2) | TC-FATIA2-01, TC-FATIA2-02 |
